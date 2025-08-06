@@ -43,7 +43,7 @@ st.write("アプリの動作確認")
 st.write("インストール済みパッケージの確認コマンド pip list")
 st.write("アプリの起動コマンド streamlit run {ファイル名}.py")
 st.write("streamlitのインストールコマンド pip install streamlit")
-st.write("仮想環境の停止コマンド Ctrl + C")
+st.write("仮想環境の停止コマンド Ctrl + C　※反応ないときはCtrl ＋ CCと2回押してみる")
 
 st.divider()
 
