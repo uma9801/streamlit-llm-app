@@ -1,0 +1,66 @@
+import streamlit as st
+
+st.title("Webアプリデプロイまでの手順")
+
+st.write("StreamlitとGitHubを使用してWebアプリをデプロイする手順を示します。")
+
+
+st.write("#### GitHubリポジトリの作成とクローン")
+st.write("GitHubにログイン URL: https://github.com/")
+st.write("・Create repositoryボタンから新しいリポジトリを作成")
+st.write("1. Repository nameの欄にリポジトリ名を入力　ここでの例:streamlit-llm-app")
+st.write("2. デフォルトのPublicのままにしておく")
+st.write("3. Add a README fileのチェックボックスをオンにする")
+st.write("4. Add.gitignoreのセレクトボックスで「Python」を選択")
+st.write("5. Create repositoryボタンをクリック")
+st.write("・リポジトリと自分のPCを接続する（クローン）")
+st.write("作成して開いたリポジトリの画面で、Codeボタンをクリックし、HTTPSのURLをコピー")
+st.write("VSCodeのターミナルでコマンドを実行（実行したディレクトリ下にディレクトリが作成される）")
+st.write("コマンド: git clone {リポジトリのURL}")
+st.write("リポジトリ名のディレクトリが作成されるので、VSCodeの直下にセット")
+
+st.divider()
+
+st.write("#### VSCodeでの処理")
+st.write("streamlit-llm-appディレクトリをVSCodeにセットして仮想環境を作成・有効化する")
+st.write("仮想環境の作成コマンド python -m venv env")
+st.write("仮想環境の起動コマンド Windows: env\Scripts\activate.bat")
+st.write("pip install streamlit==1.41.1")
+
+st.write("・OpenAI APIキーの設定(環境変数の設定)")
+st.write("1.VSCodeにセットしたディレクトリ直下に「.env」ファイルを作成")
+st.write("2.「.env」ファイルに記述：OPENAI_API_KEY={APIキーをここに入力}")
+st.write("3. 環境変数を読み込むためのパッケージをインストール")
+st.write("コマンド: pip install python-dotenv")
+st.write("4. メインファイルとなる｛ファイル名｝.pyに以下のコードを追加して環境変数を読み込み")
+st.write("from dotenv import load_dotenv")
+st.write("load_dotenv()")
+st.write("※「.env」ファイルをGitHubにアップロードするとAPIキーが漏洩するので注意！")
+st.write("デフォルトでは.gitignoreファイルに.envが含まれているので、アップロードされません。")
+st.write(".gitignoreファイルがなければ作成し、.envが含まれていない場合は「.env」と記述")
+st.divider()
+st.write("アプリの動作確認")
+st.write("インストール済みパッケージの確認コマンド pip list")
+st.write("アプリの起動コマンド streamlit run {ファイル名}.py")
+st.write("streamlitのインストールコマンド pip install streamlit")
+st.write("仮想環境の停止コマンド Ctrl + C")
+
+st.divider()
+
+st.write("#### GitHubリポジトリへのアップロード手順")
+st.write("・PC仮想環境内にインストールされているパッケージ情報をrequirements.txtに出力")
+st.write("コマンド: pip freeze > requirements.txt")
+st.write("・GitHubリポジトリにソースコードをアップロードするための手順")
+st.write("1. git add .")
+st.write("2. git commit -m 'アップロード時のコメントを好きに入力 例：2nd commitなど'")
+st.write("3. git push -u origin main")
+
+st.divider()
+
+st.write("#### Streamlit Community Cloudへのデプロイ手順")
+st.write("Streamlit Community Cloudにログイン URL: https://share.streamlit.io/signup")
+st.write("Create appをクリック")
+st.write("Deploy a public app from GitHubを選択")
+st.write("URLやファイル名を入力（advanced settingsでPython3.11を選択）")
+st.write("OpenAI APIキーが必要なら入力: OPENAI_API_KEY={APIキーをここに入力}")
+st.write("Deployをクリック！")
