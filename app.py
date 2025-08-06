@@ -1,9 +1,7 @@
-"""
-ローカル環境での実行時はコメント化を解除する。
-# .envに記述した環境変数を読み込むためのコード
+# .envに記述した環境変数を読み込むためのコード（ローカル環境でのみ使用）
 from dotenv import load_dotenv
 load_dotenv()
-"""
+# ここまで
 
 import os
 import streamlit as st
@@ -47,5 +45,4 @@ if st.button("実行"):
     if answer == "質問を入力してください。":
         st.warning(answer)
     else:
-        st.write("専門家が回答を考えています...")
         st.write(answer)

@@ -27,7 +27,7 @@ st.write("仮想環境の作成コマンド python -m venv env")
 st.write("仮想環境の起動コマンド Windows: env\Scripts\activate.bat")
 st.write("pip install streamlit==1.41.1")
 
-st.write("・OpenAI APIキーの設定(環境変数の設定)")
+st.write("・OpenAI APIキーの設定＝環境変数の設定（ローカル環境用）")
 st.write("1.VSCodeにセットしたディレクトリ直下に「.env」ファイルを作成")
 st.write("2.「.env」ファイルに記述：OPENAI_API_KEY={APIキーをここに入力}")
 st.write("3. 環境変数を読み込むためのパッケージをインストール")
@@ -43,7 +43,7 @@ st.write("アプリの動作確認")
 st.write("インストール済みパッケージの確認コマンド pip list")
 st.write("アプリの起動コマンド streamlit run {ファイル名}.py")
 st.write("streamlitのインストールコマンド pip install streamlit")
-st.write("仮想環境の停止コマンド Ctrl + C　※反応ないときはCtrl ＋ CCと2回押してみる")
+st.write("仮想環境の停止コマンド Ctrl + C　※何度やってもだめなら、ターミナルを閉じる")
 
 st.divider()
 
@@ -68,3 +68,4 @@ st.write("URLやファイル名を入力（advanced settingsでPython3.11を選�
 st.write('OpenAI APIキーが必要なら「Secrets」の欄に入力: OPENAI_API_KEY="{APIキーをここに入力}"')
 st.write("ダブルクォーテーションで囲むことを忘れずに！")
 st.write("Deployをクリック！")
+st.write("#### APIキーが認識されないなど、どうしてもエラーが解決できないときは、My appsのページからアプリを削除し、再度デプロイし直すと解決することがあります。")
